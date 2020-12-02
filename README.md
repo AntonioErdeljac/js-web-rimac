@@ -1,6 +1,6 @@
 # js-web-rimac
 
-A web client component for M2M (personal) Rimac project. Serves as frontend along with js-cpu-rimac
+A web client component for M2M (personal) Rimac project. Serves as frontend along with [js-cpu-rimac](https://github.com/AntonioErdeljac/js-cpu-rimac)
 
 ### Cloning the repository
 
@@ -29,4 +29,4 @@ Copy content from `.env.example` to `.env`
 
 | variable           | description                              | required                                                                                                                         |
 | :----------------- | :--------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| `FIREBASE_API`     | URL to firebase realtime database, must match url from js-cpu-rimac        | true                                                                                                                             |
+| `FIREBASE_API`     | URL to firebase realtime database, must match url from [js-cpu-rimac](https://github.com/AntonioErdeljac/js-cpu-rimac)        | true                                                                                                                             |
