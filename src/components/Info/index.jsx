@@ -1,13 +1,17 @@
 import CountUp from 'react-countup';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
-import React, { memo, useMemo } from 'react';
+import React, { memo, useEffect, useMemo } from 'react';
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './index.scss';
 
-const Info = ({ icon, title, value, suffix, min, max }) => {
+import { useSystem } from '../../providers';
+
+const Info = ({ icon, title, value, suffix, min, max, warning }) => {
+  const { warn, clearWarning } = useSystem();
+
   const isFaulty = useMemo(() => {
     const maxError = value >= max;
     const minError = value < min;
@@ -15,18 +19,26 @@ const Info = ({ icon, title, value, suffix, min, max }) => {
     return maxError || minError;
   }, [value, min, max]);
 
+  useEffect(() => {
+    if (isFaulty) {
+      warn(warning);
+    } else {
+      clearWarning(warning);
+    }
+  }, [isFaulty, warning, warn, clearWarning]);
+
   return (
     <Card className="r-info mb-4">
       <Card.Body className="d-flex align-items-center flex-column">
-        <FontAwesomeIcon className="r-info r-info-icon" icon={icon} />
-        <div className="mt-4 mb-2">
+        <FontAwesomeIcon size="2x" className="r-info r-info-icon" icon={icon} />
+        <div className="mt-4">
           <strong className="text-primary">{title}</strong>
         </div>
-        <div className="my-5">
-          <h4 className={cn({ 'text-danger': isFaulty })}>
-            <CountUp duration={5} end={value} />
+        <div className="mt-4">
+          <strong className={cn({ 'text-danger': isFaulty })}>
+            <CountUp preserveValue duration={5} end={value} />
             {suffix}
-          </h4>
+          </strong>
         </div>
       </Card.Body>
     </Card>
@@ -40,6 +52,7 @@ Info.propTypes = {
   suffix: PropTypes.string,
   min: PropTypes.number,
   max: PropTypes.number,
+  warning: PropTypes.string.isRequired,
 };
 
 Info.defaultProps = {

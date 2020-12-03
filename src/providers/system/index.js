@@ -16,16 +16,30 @@ export const useSystem = () => {
 
 export const SystemProvider = ({ children }) => {
   const {
-    getIsConnected,
+    getAlertMessage,
+    getStatus,
     getTemperature,
     getBattery,
     getMemory,
     getNetworkConnections,
+    warn,
+    getWarning,
+    clearWarning,
   } = useSystemProvider();
 
   return (
     <Context.Provider
-      value={{ getIsConnected, getTemperature, getBattery, getMemory, getNetworkConnections }}
+      value={{
+        getAlertMessage,
+        getStatus,
+        getTemperature,
+        getBattery,
+        getMemory,
+        getNetworkConnections,
+        warn,
+        getWarning,
+        clearWarning,
+      }}
     >
       {children}
     </Context.Provider>

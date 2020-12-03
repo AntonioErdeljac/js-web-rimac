@@ -10,39 +10,45 @@ const Home = () => {
   return (
     <div className="mt-5">
       <Row>
-        <Col md={4}>
+        <Col md={3}>
           <Message
-            variant={system.getIsConnected() ? 'success' : 'danger'}
+            variant={system.getStatus()}
             icon="exclamation-circle"
-            title="Alert"
-            description={
-              system.getIsConnected() ? 'Actively connected.' : 'No connection with any hardware.'
-            }
+            title="Warning"
+            description={system.getAlertMessage()}
           />
         </Col>
       </Row>
       <Row>
-        <Col md={4}>
-          <Info title="Battery" icon="bolt" value={system.getBattery()} suffix="%" />
+        <Col md={3}>
+          <Info
+            title="Battery"
+            icon="bolt"
+            value={system.getBattery()}
+            suffix="%"
+            warning="Battery is critically low!"
+          />
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <Info
             title="Network Connections"
             icon="network-wired"
             value={system.getNetworkConnections()}
+            warning="Too many network connections!"
           />
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <Info
             min={30}
-            max={35}
+            max={70}
             title="CPU Temperature"
             icon="thermometer-three-quarters"
             value={system.getTemperature()}
             suffix=" °C"
+            warning="CPU is overheating!"
           />
         </Col>
-        <Col md={4}>
+        <Col md={3}>
           <Info title="Memory Usage" icon="memory" value={system.getMemory()} suffix="%" />
         </Col>
       </Row>

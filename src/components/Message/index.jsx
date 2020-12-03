@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Message = ({ title, description, icon, variant }) => {
   return (
-    <Alert variant={variant} className="text-white">
+    <Alert variant={variant} className="text-white mb-4">
       <div className="d-inline-flex align-items-center">
         <FontAwesomeIcon size="lg" icon={icon} />
         <strong className="ml-3">{title}</strong>
