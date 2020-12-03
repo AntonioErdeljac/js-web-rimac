@@ -10,11 +10,13 @@ export const useSystemProvider = () => {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const ref = firebase.db.ref(FIREBASE_COLLECTION).on('value', (snapshot) => {
+    const ref = firebase.db.ref(FIREBASE_COLLECTION);
+
+    ref?.on('value', (snapshot) => {
       setInfo(snapshot.val() || {});
     });
 
-    return () => ref.remove();
+    return () => ref?.off();
   }, []);
 
   useEffect(() => {
