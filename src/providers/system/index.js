@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React, { createContext, useContext } from 'react';
+import { useSystemProvider } from './hooks';
 
 export const Context = createContext();
 
@@ -14,7 +15,21 @@ export const useSystem = () => {
 };
 
 export const SystemProvider = ({ children }) => {
-  return <Context.Provider value={{}}>{children}</Context.Provider>;
+  const {
+    getStatus,
+    getTemperature,
+    getBattery,
+    getMemory,
+    getNetworkConnections,
+  } = useSystemProvider();
+
+  return (
+    <Context.Provider
+      value={{ getStatus, getTemperature, getBattery, getMemory, getNetworkConnections }}
+    >
+      {children}
+    </Context.Provider>
+  );
 };
 
 SystemProvider.propTypes = {
