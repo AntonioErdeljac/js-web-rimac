@@ -13,12 +13,12 @@ icons();
 const App = () => {
   return (
     <Drawer>
-      <Header />
-      <Container fluid className="px-5">
-        <SystemProvider>
+      <SystemProvider>
+        <Header />
+        <Container fluid className="px-5">
           <Home />
-        </SystemProvider>
-      </Container>
+        </Container>
+      </SystemProvider>
     </Drawer>
   );
 };

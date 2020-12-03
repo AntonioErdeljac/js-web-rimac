@@ -1,23 +1,18 @@
 import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-import { Info, Message } from '../../components';
+import car from './car.png';
+
+import { Info } from '../../components';
 import { useSystem } from '../../providers';
 
 const Home = () => {
   const system = useSystem();
 
   return (
-    <div className="mt-5">
-      <Row>
-        <Col md={3}>
-          <Message
-            variant={system.getStatus()}
-            icon="exclamation-circle"
-            title={system.getStatus()}
-            description={system.getAlertMessage()}
-          />
-        </Col>
+    <div>
+      <Row className="d-inline-flex align-items-center justify-content-center w-100 flex-column">
+        <img className="mb-5" height={280} alt="car" src={car} />
       </Row>
       <Row>
         <Col md={3}>
