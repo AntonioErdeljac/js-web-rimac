@@ -2,7 +2,7 @@
 
 .r-drawer {
   &-logo {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 
   &-item {
@@ -13,9 +13,7 @@
 
 
     &:hover {
-      opacity: 1;
-      border-right: 2px solid $primary;
-      color: $primary;
+      opacity: 0.5;
     }
 
     &--active {
