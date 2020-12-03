@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap';
 
 import { SystemProvider } from './providers';
 import { Home } from './views';
-import { Drawer } from './components';
+import { Drawer, Header } from './components';
 import { icons } from './utils';
 
 import './scss/index.scss';
@@ -13,7 +13,8 @@ icons();
 const App = () => {
   return (
     <Drawer>
-      <Container fluid>
+      <Header />
+      <Container fluid className="px-5">
         <SystemProvider>
           <Home />
         </SystemProvider>
