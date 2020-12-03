@@ -8,7 +8,7 @@ const Message = ({ title, description, icon, variant }) => {
     <Alert variant={variant} className="text-white mb-4">
       <div className="d-inline-flex align-items-center">
         <FontAwesomeIcon size="lg" icon={icon} />
-        <strong className="ml-3">{title}</strong>
+        <strong className="ml-3 text-capitalize">{title}</strong>
       </div>
       <div className="mt-3">{description}</div>
     </Alert>

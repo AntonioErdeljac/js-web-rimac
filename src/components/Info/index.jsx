@@ -40,6 +40,11 @@ const Info = ({ icon, title, value, suffix, min, max, warning }) => {
             {suffix}
           </strong>
         </div>
+        <hr className="w-100" />
+        <div className="d-inline-flex align-items-center justify-content-between w-100 px-5">
+          <small className="text-muted">Max: {max}</small>
+          <small className="text-muted">Min: {min}</small>
+        </div>
       </Card.Body>
     </Card>
   );

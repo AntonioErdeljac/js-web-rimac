@@ -14,7 +14,7 @@ const Home = () => {
           <Message
             variant={system.getStatus()}
             icon="exclamation-circle"
-            title="Warning"
+            title={system.getStatus()}
             description={system.getAlertMessage()}
           />
         </Col>
@@ -22,15 +22,19 @@ const Home = () => {
       <Row>
         <Col md={3}>
           <Info
+            min={92}
+            max={100}
             title="Battery"
             icon="bolt"
             value={system.getBattery()}
             suffix="%"
-            warning="Battery is critically low!"
+            warning="Battery level not ideal!"
           />
         </Col>
         <Col md={3}>
           <Info
+            min={10}
+            max={130}
             title="Network Connections"
             icon="network-wired"
             value={system.getNetworkConnections()}
@@ -49,7 +53,14 @@ const Home = () => {
           />
         </Col>
         <Col md={3}>
-          <Info title="Memory Usage" icon="memory" value={system.getMemory()} suffix="%" />
+          <Info
+            min={30}
+            max={70}
+            title="Memory Usage"
+            icon="memory"
+            value={system.getMemory()}
+            suffix="%"
+          />
         </Col>
       </Row>
     </div>
