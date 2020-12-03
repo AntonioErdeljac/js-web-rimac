@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Message } from '../../components';
 
+import { Info, Message } from '../../components';
 import { useSystem } from '../../providers';
 
 const Home = () => {
@@ -12,17 +12,37 @@ const Home = () => {
       <Row>
         <Col md={4}>
           <Message
-            variant="danger"
+            variant={system.getIsConnected() ? 'success' : 'danger'}
             icon="exclamation-circle"
             title="Alert"
-            description="No connection with any hardware."
+            description={
+              system.getIsConnected() ? 'Actively connected.' : 'No connection with any hardware.'
+            }
           />
         </Col>
-        <p>Online: {system.getStatus()}</p>
-        <p>Battery: {system.getBattery()}</p>
-        <p>Network Connections: {system.getNetworkConnections()}</p>
-        <p>CPU Temperature: {system.getTemperature()}</p>
-        <p>Memory Usage: {system.getMemory()}</p>
+      </Row>
+      <Row>
+        <Col md={4}>
+          <Info title="Battery" icon="bolt" value={system.getBattery()} suffix="%" />
+        </Col>
+        <Col md={4}>
+          <Info
+            title="Network Connections"
+            icon="network-wired"
+            value={system.getNetworkConnections()}
+          />
+        </Col>
+        <Col md={4}>
+          <Info
+            title="CPU Temperature"
+            icon="thermometer-three-quarters"
+            value={system.getTemperature()}
+            suffix="°C"
+          />
+        </Col>
+        <Col md={4}>
+          <Info title="Memory Usage" icon="memory" value={system.getMemory()} suffix="%" />
+        </Col>
       </Row>
     </div>
   );

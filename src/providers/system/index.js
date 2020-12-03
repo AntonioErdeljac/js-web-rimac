@@ -16,7 +16,7 @@ export const useSystem = () => {
 
 export const SystemProvider = ({ children }) => {
   const {
-    getStatus,
+    getIsConnected,
     getTemperature,
     getBattery,
     getMemory,
@@ -25,7 +25,7 @@ export const SystemProvider = ({ children }) => {
 
   return (
     <Context.Provider
-      value={{ getStatus, getTemperature, getBattery, getMemory, getNetworkConnections }}
+      value={{ getIsConnected, getTemperature, getBattery, getMemory, getNetworkConnections }}
     >
       {children}
     </Context.Provider>

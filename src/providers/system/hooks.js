@@ -27,13 +27,13 @@ export const useSystemProvider = () => {
     return () => clearInterval(interval);
   }, [info.expiresAt]);
 
-  const getStatus = useCallback(() => `${isConnected}`, [isConnected]);
-  const getTemperature = useCallback(() => `${info.temperature}°C`, [info.temperature]);
-  const getBattery = useCallback(() => `${info.batteryPercentage}%`, [info.batteryPercentage]);
-  const getMemory = useCallback(() => `${info.memoryPercentage}%`, [info.memoryPercentage]);
+  const getIsConnected = useCallback(() => isConnected, [isConnected]);
+  const getTemperature = useCallback(() => info.temperature, [info.temperature]);
+  const getBattery = useCallback(() => info.batteryPercentage, [info.batteryPercentage]);
+  const getMemory = useCallback(() => info.memoryPercentage, [info.memoryPercentage]);
   const getNetworkConnections = useCallback(() => info.networkConnections, [
     info.networkConnections,
   ]);
 
-  return { getStatus, getTemperature, getBattery, getMemory, getNetworkConnections };
+  return { getIsConnected, getTemperature, getBattery, getMemory, getNetworkConnections };
 };
