@@ -7,6 +7,9 @@ const Home = () => {
 
   return (
     <div>
+      <h3 className="text-primary">
+        <strong>Dashboard</strong>
+      </h3>
       <p>Online: {system.getStatus()}</p>
       <p>Battery: {system.getBattery()}</p>
       <p>Network Connections: {system.getNetworkConnections()}</p>

@@ -1,3 +1,8 @@
-$primary: #5B63AF;
+@import "./fonts";
+
+$primary: #404774;
+$font-family-base: 'Lato';
+$grey-600: #828499;
+$red: #F98686;
 
 @import "~bootstrap/scss/bootstrap";
