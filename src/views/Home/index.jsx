@@ -34,10 +34,12 @@ const Home = () => {
         </Col>
         <Col md={4}>
           <Info
+            min={30}
+            max={35}
             title="CPU Temperature"
             icon="thermometer-three-quarters"
             value={system.getTemperature()}
-            suffix="°C"
+            suffix=" °C"
           />
         </Col>
         <Col md={4}>
