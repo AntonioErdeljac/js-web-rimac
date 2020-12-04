@@ -83,10 +83,10 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
 Info.propTypes = {
   icon: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   suffix: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number,
+  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   warning: PropTypes.string,
   edit: PropTypes.bool,
   onChange: PropTypes.func,

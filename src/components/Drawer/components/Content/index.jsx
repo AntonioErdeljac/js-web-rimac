@@ -15,7 +15,7 @@ const Content = () => {
       </div>
       <div className="pt-4 mt-2 d-flex justify-content-center align-items-center flex-column">
         {routes().map((route) => (
-          <Item icon={route.icon} path={route.path} />
+          <Item key={route.path} icon={route.icon} path={route.path} />
         ))}
       </div>
     </div>
