@@ -2,7 +2,7 @@ import cn from 'classnames';
 import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
-import car from './car.png';
+import car from './images/car.png';
 
 import { Info } from '../../components';
 import { useSystem } from '../../providers';
