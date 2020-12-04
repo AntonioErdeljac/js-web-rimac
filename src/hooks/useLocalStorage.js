@@ -10,7 +10,6 @@ export default (key, defaultValue) => {
   const setValue = useCallback(
     (value) => {
       setSavedValue(value);
-      console.log(JSON.stringify(value));
       window.localStorage.setItem(key, JSON.stringify(value));
     },
     [key],
