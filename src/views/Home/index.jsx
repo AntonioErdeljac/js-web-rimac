@@ -14,7 +14,7 @@ const Home = () => {
   const system = useSystem();
 
   return (
-    <Fade right>
+    <Fade left>
       <div className="r-home">
         <Row className="d-inline-flex align-items-center justify-content-center w-100 flex-column">
           <img
