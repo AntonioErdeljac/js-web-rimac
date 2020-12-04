@@ -1,15 +1,16 @@
 import { useState, useCallback } from 'react';
 
-export default (key) => {
+export default (key, defaultValue) => {
   const [savedValue, setSavedValue] = useState(() => {
     const value = window.localStorage.getItem(key);
 
-    return JSON.parse(value);
+    return value ? JSON.parse(value) : defaultValue;
   });
 
   const setValue = useCallback(
     (value) => {
       setSavedValue(value);
+      console.log(JSON.stringify(value));
       window.localStorage.setItem(key, JSON.stringify(value));
     },
     [key],

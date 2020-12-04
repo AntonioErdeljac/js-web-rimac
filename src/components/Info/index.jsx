@@ -36,8 +36,19 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
         </div>
         {edit ? (
           <div className="mt-3">
-            <FormControl className="my-2" placeholder="Min" onChange={onChange} name="min" />
-            <FormControl placeholder="Max" onChange={onChange} name="max" />
+            <FormControl
+              value={min !== -Infinity ? min : ''}
+              className="my-2"
+              placeholder="Min"
+              onChange={onChange}
+              name="min"
+            />
+            <FormControl
+              value={max !== Infinity ? max : ''}
+              placeholder="Max"
+              onChange={onChange}
+              name="max"
+            />
           </div>
         ) : (
           <>

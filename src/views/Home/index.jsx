@@ -7,11 +7,17 @@ import car from './images/car.png';
 
 import { Info } from '../../components';
 import { useSystem } from '../../providers';
+import { useLocalStorage } from '../../hooks';
 
 import './index.scss';
 
 const Home = () => {
   const system = useSystem();
+
+  const [battery] = useLocalStorage('r-battery', {});
+  const [network] = useLocalStorage('r-network', {});
+  const [cpu] = useLocalStorage('r-cpu', {});
+  const [memory] = useLocalStorage('r-memory', {});
 
   return (
     <Fade left>
@@ -29,8 +35,8 @@ const Home = () => {
         <Row>
           <Col lg={3} md={6}>
             <Info
-              min={92}
-              max={100}
+              min={battery.min}
+              max={battery.max}
               title="Battery"
               icon="bolt"
               value={system.getBattery()}
@@ -40,8 +46,8 @@ const Home = () => {
           </Col>
           <Col lg={3} md={6}>
             <Info
-              min={10}
-              max={130}
+              min={network.min}
+              max={network.max}
               title="Network Connections"
               icon="network-wired"
               value={system.getNetworkConnections()}
@@ -50,8 +56,8 @@ const Home = () => {
           </Col>
           <Col lg={3} md={6}>
             <Info
-              min={30}
-              max={70}
+              min={cpu.min}
+              max={cpu.max}
               title="CPU Temperature"
               icon="thermometer-three-quarters"
               value={system.getTemperature()}
@@ -61,8 +67,8 @@ const Home = () => {
           </Col>
           <Col lg={3} md={6}>
             <Info
-              min={30}
-              max={70}
+              min={memory.min}
+              max={memory.max}
               title="Memory Usage"
               icon="memory"
               value={system.getMemory()}
