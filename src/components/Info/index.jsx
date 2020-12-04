@@ -2,7 +2,7 @@ import CountUp from 'react-countup';
 import cn from 'classnames';
 import PropTypes from 'prop-types';
 import React, { memo, useEffect, useMemo } from 'react';
-import { Card, FormControl } from 'react-bootstrap';
+import { Card, FormControl, FormLabel } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './index.scss';
@@ -13,8 +13,12 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
   const { warn, clearWarning } = useSystem();
 
   const isFaulty = useMemo(() => {
-    const maxError = value > max;
-    const minError = value < min;
+    if (!value) {
+      return false;
+    }
+
+    const maxError = max && value > max;
+    const minError = min && value < min;
 
     return maxError || minError;
   }, [value, min, max]);
@@ -36,6 +40,9 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
         </div>
         {edit ? (
           <div className="mt-3">
+            <FormLabel className="text-muted" as="small">
+              Min
+            </FormLabel>
             <FormControl
               value={min !== -Infinity ? min : ''}
               className="my-2"
@@ -43,6 +50,9 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
               onChange={onChange}
               name="min"
             />
+            <FormLabel className="text-muted" as="small">
+              Max
+            </FormLabel>
             <FormControl
               value={max !== Infinity ? max : ''}
               placeholder="Max"
@@ -60,8 +70,8 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
             </div>
             <hr className="w-100" />
             <div className="d-inline-flex align-items-center justify-content-between w-100 px-5">
-              <small className="text-muted">Max: {max}</small>
-              <small className="text-muted">Min: {min}</small>
+              <small className="text-muted">Max: {max || 0}</small>
+              <small className="text-muted">Min: {min || 0}</small>
             </div>
           </>
         )}
@@ -85,8 +95,8 @@ Info.propTypes = {
 Info.defaultProps = {
   suffix: '',
   value: 0,
-  min: -Infinity,
-  max: Infinity,
+  min: 0,
+  max: 0,
   edit: false,
   onChange: () => {},
   warning: '',
