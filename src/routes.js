@@ -1,6 +1,4 @@
-import { Help, Home, Settings } from './views';
-
-export default [
+export default ({ Home, Settings, Help } = {}) => [
   {
     path: '/',
     component: Home,
