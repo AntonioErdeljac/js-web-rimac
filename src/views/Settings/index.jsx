@@ -1,59 +1,22 @@
-import React, { memo, useCallback } from 'react';
+import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { Fade } from 'react-reveal';
 
+import { useSettings } from './hooks';
+
 import { Info } from '../../components';
-import { useLocalStorage } from '../../hooks';
 
 const Settings = () => {
-  const [battery, setBattery] = useLocalStorage('r-battery', {});
-  const [network, setNetwork] = useLocalStorage('r-network', {});
-  const [cpu, setCpu] = useLocalStorage('r-cpu', {});
-  const [memory, setMemory] = useLocalStorage('r-memory', {});
-
-  const onChangeBattery = useCallback(
-    (event) => {
-      const {
-        target: { value, name },
-      } = event;
-
-      setBattery({ ...battery, [name]: value });
-    },
-    [battery, setBattery],
-  );
-
-  const onChangeNetwork = useCallback(
-    (event) => {
-      const {
-        target: { value, name },
-      } = event;
-
-      setNetwork({ ...network, [name]: value });
-    },
-    [network, setNetwork],
-  );
-
-  const onChangeCpu = useCallback(
-    (event) => {
-      const {
-        target: { value, name },
-      } = event;
-
-      setCpu({ ...cpu, [name]: value });
-    },
-    [cpu, setCpu],
-  );
-
-  const onChangeMemory = useCallback(
-    (event) => {
-      const {
-        target: { value, name },
-      } = event;
-
-      setMemory({ ...memory, [name]: value });
-    },
-    [memory, setMemory],
-  );
+  const {
+    battery,
+    memory,
+    cpu,
+    network,
+    onChangeBattery,
+    onChangeMemory,
+    onChangeCpu,
+    onChangeNetwork,
+  } = useSettings();
 
   return (
     <Fade left>
