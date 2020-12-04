@@ -16,7 +16,7 @@ const Home = () => {
     <div className="r-home">
       <Row className="d-inline-flex align-items-center justify-content-center w-100 flex-column">
         <img
-          className={cn('mb-5 r-home r-home-image', {
+          className={cn('mb-5 r-home r-home-image img-fluid', {
             'r-home-image--danger': system.getStatus() !== 'success',
           })}
           height={280}
@@ -25,7 +25,7 @@ const Home = () => {
         />
       </Row>
       <Row>
-        <Col md={3}>
+        <Col lg={3} md={6}>
           <Info
             min={92}
             max={100}
@@ -36,7 +36,7 @@ const Home = () => {
             warning="Battery level not ideal!"
           />
         </Col>
-        <Col md={3}>
+        <Col lg={3} md={6}>
           <Info
             min={10}
             max={130}
@@ -46,7 +46,7 @@ const Home = () => {
             warning="Too many network connections!"
           />
         </Col>
-        <Col md={3}>
+        <Col lg={3} md={6}>
           <Info
             min={30}
             max={70}
@@ -54,10 +54,10 @@ const Home = () => {
             icon="thermometer-three-quarters"
             value={system.getTemperature()}
             suffix=" °C"
-            warning="CPU is overheating!"
+            warning="CPU temperature not ideal"
           />
         </Col>
-        <Col md={3}>
+        <Col lg={3} md={6}>
           <Info
             min={30}
             max={70}
@@ -65,6 +65,7 @@ const Home = () => {
             icon="memory"
             value={system.getMemory()}
             suffix="%"
+            warning="Memory usage level not ideal!"
           />
         </Col>
       </Row>
