@@ -9,16 +9,16 @@ const Help = () => {
       </h3>
       <p>
         This is a personal M2M concept for Rimac Autombili, made by{' '}
-        <a href="https://github.com/AntonioErdeljac" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/antonio-erdeljac/" target="_blank" rel="noreferrer">
           Antonio Erdeljac
         </a>
         <strong> in hope of getting an interview.</strong> Instead of reading metrics from an
         automobile, metrics are received in real time from my computer. Technologies used are{' '}
         <strong>React, SCSS, ES6, Firebase, Bootstrap, and Node.js. </strong>
         Project is structured to apply for an enterprise application. For consistency, the following
-        packages are used: <strong>prettier, eslint, commitlint</strong>. I would gladly go over the
-        code and talk about which parts I would change in a larger application, if given the chance
-        ;)
+        packages are used: <strong>Prettier, Eslint, Commitlint</strong>. Testing is done for all
+        common components using <strong>Enzyme and Jest</strong>. I would gladly go over the code
+        and talk about which parts I would change in a larger application, if given the chance ;)
       </p>
       <h3>
         <strong>Can it read metrics from my computer?</strong>

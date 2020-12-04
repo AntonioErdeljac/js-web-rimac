@@ -22,6 +22,7 @@ Running commands with npm `npm run [command]`
 | command            | description                                                                                                                                                                 |
 | :----------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `start`            | Starts a development instance of app                                                                                                                                        |
+| `test`             | Runs unit tests in interactive mode                                                                                                                                         |
 
 ### Environment variables
 
