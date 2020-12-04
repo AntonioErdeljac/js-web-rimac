@@ -7,7 +7,7 @@ const RouteRenderer = () => {
   return (
     <Switch>
       {routes.map((route) => (
-        <Route exact={route.exact} component={route.component} path={route.path} />
+        <Route key={route.path} exact={route.exact} component={route.component} path={route.path} />
       ))}
     </Switch>
   );

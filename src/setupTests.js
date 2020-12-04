@@ -12,4 +12,9 @@ Object.defineProperty(window, 'matchMedia', {
   },
 });
 
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useEffect: (f) => f(),
+}));
+
 Enzyme.configure({ adapter: new Adapter() });

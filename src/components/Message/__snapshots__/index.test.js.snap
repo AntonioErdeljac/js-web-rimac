@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message Component renders correctly according to snapshot 1`] = `
+<Alert
+  className="r-alert text-white mb-0 border-0 shadow-sm"
+  closeLabel="Close alert"
+  show={true}
+  transition={
+    Object {
+      "$$typeof": Symbol(react.forward_ref),
+      "defaultProps": Object {
+        "appear": false,
+        "in": false,
+        "mountOnEnter": false,
+        "timeout": 300,
+        "unmountOnExit": false,
+      },
+      "render": [Function],
+    }
+  }
+  variant="success"
+>
+  <div
+    className="d-inline-flex align-items-center"
+  >
+    <FontAwesomeIcon
+      border={false}
+      className=""
+      fixedWidth={false}
+      flip={null}
+      icon="exclamation-circle"
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size="lg"
+      spin={false}
+      swapOpacity={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+    <div
+      className="ml-2"
+    >
+      All systems operational
+    </div>
+  </div>
+</Alert>
+`;
