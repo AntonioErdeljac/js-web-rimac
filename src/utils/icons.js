@@ -1,21 +1,21 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  faChartLine,
-  faCogs,
+  faCog,
   faExclamationCircle,
   faBolt,
   faNetworkWired,
   faThermometerThreeQuarters,
   faMemory,
+  faTachometerAlt,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default () =>
   library.add(
-    faChartLine,
-    faCogs,
+    faCog,
     faExclamationCircle,
     faBolt,
     faNetworkWired,
     faThermometerThreeQuarters,
     faMemory,
+    faTachometerAlt,
   );

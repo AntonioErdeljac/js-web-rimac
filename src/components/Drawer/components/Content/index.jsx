@@ -12,8 +12,8 @@ const Content = () => {
         <Logo height={45} width={45} />
       </div>
       <div className="pt-4 mt-2 d-flex justify-content-center align-items-center flex-column">
-        <Item isActive icon="chart-line" />
-        <Item icon="cogs" />
+        <Item isActive icon="tachometer-alt" />
+        <Item icon="cog" />
       </div>
     </div>
   );

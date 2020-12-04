@@ -13,7 +13,7 @@ const Info = ({ icon, title, value, suffix, min, max, warning }) => {
   const { warn, clearWarning } = useSystem();
 
   const isFaulty = useMemo(() => {
-    const maxError = value >= max;
+    const maxError = value > max;
     const minError = value < min;
 
     return maxError || minError;

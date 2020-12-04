@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
-import { Message } from '..';
+
+import Message from '../Message';
 
 import { useSystem } from '../../providers';
 

@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
@@ -6,13 +7,22 @@ import car from './car.png';
 import { Info } from '../../components';
 import { useSystem } from '../../providers';
 
+import './index.scss';
+
 const Home = () => {
   const system = useSystem();
 
   return (
-    <div>
+    <div className="r-home">
       <Row className="d-inline-flex align-items-center justify-content-center w-100 flex-column">
-        <img className="mb-5" height={280} alt="car" src={car} />
+        <img
+          className={cn('mb-5 r-home r-home-image', {
+            'r-home-image--danger': system.getStatus() !== 'success',
+          })}
+          height={280}
+          alt="car"
+          src={car}
+        />
       </Row>
       <Row>
         <Col md={3}>
