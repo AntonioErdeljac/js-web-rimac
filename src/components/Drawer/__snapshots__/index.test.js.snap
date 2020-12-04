@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Drawer Component renders correctly according to snapshot 1`] = `
+<Sidebar
+  defaultSidebarWidth={0}
+  docked={false}
+  dragToggleDistance={30}
+  onSetOpen={[Function]}
+  open={false}
+  pullRight={false}
+  shadow={true}
+  sidebar={<Memo(Content) />}
+  sidebarClassName="r-sidebar"
+  styles={Object {}}
+  touch={true}
+  touchHandleWidth={20}
+  transitions={true}
+>
+  <p>
+    Content
+  </p>
+</Sidebar>
+`;
