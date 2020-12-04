@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import { Container } from 'react-bootstrap';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import { SystemProvider } from './providers';
-import { Home } from './views';
-import { Drawer, Header } from './components';
+import { Drawer, Header, RouteRenderer } from './components';
 import { icons } from './utils';
 
 import './scss/index.scss';
@@ -12,14 +12,16 @@ icons();
 
 const App = () => {
   return (
-    <Drawer>
-      <SystemProvider>
-        <Header />
-        <Container fluid className="px-5">
-          <Home />
-        </Container>
-      </SystemProvider>
-    </Drawer>
+    <Router>
+      <Drawer>
+        <SystemProvider>
+          <Header />
+          <Container fluid className="px-5">
+            <RouteRenderer />
+          </Container>
+        </SystemProvider>
+      </Drawer>
+    </Router>
   );
 };
 
