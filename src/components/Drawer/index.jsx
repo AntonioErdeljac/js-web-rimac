@@ -4,9 +4,11 @@ import Sidebar from 'react-sidebar';
 
 import { Content } from './components';
 
+import './index.scss';
+
 const Drawer = ({ children }) => {
   return (
-    <Sidebar sidebar={<Content />} docked styles={{ sidebar: { background: 'white' } }}>
+    <Sidebar sidebar={<Content />} docked sidebarClassName="r-sidebar">
       {children}
     </Sidebar>
   );
