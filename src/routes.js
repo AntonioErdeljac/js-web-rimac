@@ -1,4 +1,4 @@
-import { Home, Settings } from './views';
+import { Help, Home, Settings } from './views';
 
 export default [
   {
@@ -12,5 +12,11 @@ export default [
     component: Settings,
     exact: true,
     icon: 'cog',
+  },
+  {
+    path: '/help',
+    component: Help,
+    exact: true,
+    icon: 'question',
   },
 ];

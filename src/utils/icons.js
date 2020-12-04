@@ -7,6 +7,8 @@ import {
   faThermometerThreeQuarters,
   faMemory,
   faTachometerAlt,
+  faQuestion,
+  faHeart,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default () =>
@@ -18,4 +20,6 @@ export default () =>
     faThermometerThreeQuarters,
     faMemory,
     faTachometerAlt,
+    faQuestion,
+    faHeart,
   );
