@@ -16,7 +16,7 @@ jest.mock('../../providers', () => ({
 
 const renderComponent = () => shallow(<Header />);
 
-describe('Drawer Component', () => {
+describe('Header Component', () => {
   it('renders correctly according to snapshot', () => {
     expect(toJson(renderComponent())).toMatchSnapshot();
   });

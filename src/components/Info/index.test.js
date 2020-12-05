@@ -28,7 +28,7 @@ const makeProps = ({ icon, title, value, suffix, min, max, warning, edit, onChan
 
 const renderComponent = (props) => shallow(<Info {...props} />);
 
-describe('Drawer Component', () => {
+describe('Info Component', () => {
   it('renders correctly according to snapshot', () => {
     expect(toJson(renderComponent(makeProps()))).toMatchSnapshot();
   });
