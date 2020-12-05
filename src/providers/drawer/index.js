@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { createContext, useContext } from 'react';
+import React, { createContext, useCallback, useContext, useState } from 'react';
 
 export const Context = createContext();
 
@@ -14,7 +14,13 @@ export const useDrawer = () => {
 };
 
 export const DrawerProvider = ({ children }) => {
-  return <Context.Provider value={{}}>{children}</Context.Provider>;
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = useCallback(() => {
+    setIsOpen((oldIsOpen) => !oldIsOpen);
+  }, []);
+
+  return <Context.Provider value={{ isOpen, toggle }}>{children}</Context.Provider>;
 };
 
 DrawerProvider.propTypes = {

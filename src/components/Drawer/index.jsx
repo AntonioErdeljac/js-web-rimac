@@ -4,11 +4,15 @@ import Sidebar from 'react-sidebar';
 
 import { Content } from './components';
 
+import { useDrawer } from '../../providers';
+
 import './index.scss';
 
 const mql = window.matchMedia(`(min-width: 992px)`);
 
 const Drawer = ({ children }) => {
+  const drawer = useDrawer();
+
   const [isDocked, setIsDocked] = useState(mql.matches);
 
   const handleMediaQueryChange = useCallback(() => {
@@ -22,7 +26,13 @@ const Drawer = ({ children }) => {
   }, [handleMediaQueryChange]);
 
   return (
-    <Sidebar sidebar={<Content />} docked={isDocked} sidebarClassName="r-sidebar">
+    <Sidebar
+      sidebar={<Content />}
+      open={drawer.isOpen}
+      onSetOpen={drawer.toggle}
+      docked={isDocked}
+      sidebarClassName="r-sidebar"
+    >
       {children}
     </Sidebar>
   );
