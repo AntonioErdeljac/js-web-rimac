@@ -12,6 +12,10 @@ jest.mock('../../providers', () => ({
     getStatus: mockGetStatus,
     getAlertMessage: mockGetAlertMessage,
   }),
+  useDrawer: () => ({
+    toggle: () => {},
+    isOpen: false,
+  }),
 }));
 
 const renderComponent = () => shallow(<Header />);
