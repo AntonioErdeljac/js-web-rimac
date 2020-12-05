@@ -6,6 +6,7 @@ import Header from './index';
 
 const mockGetStatus = jest.fn();
 const mockGetAlertMessage = jest.fn();
+const mockedToggle = jest.fn();
 
 jest.mock('../../providers', () => ({
   useSystem: () => ({
@@ -13,7 +14,7 @@ jest.mock('../../providers', () => ({
     getAlertMessage: mockGetAlertMessage,
   }),
   useDrawer: () => ({
-    toggle: () => {},
+    toggle: mockedToggle,
     isOpen: false,
   }),
 }));
@@ -30,5 +31,13 @@ describe('Header Component', () => {
 
     expect(mockGetStatus).toHaveBeenCalled();
     expect(mockGetAlertMessage).toHaveBeenCalled();
+  });
+
+  it('calls toggle on menu click', () => {
+    const wrapper = renderComponent();
+
+    wrapper.find('.r-header-menu').simulate('click');
+
+    expect(mockedToggle).toHaveBeenCalled();
   });
 });

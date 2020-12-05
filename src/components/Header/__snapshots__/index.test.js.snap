@@ -6,7 +6,7 @@ exports[`Header Component renders correctly according to snapshot 1`] = `
 >
   <div
     className="r-header-menu"
-    onClick={[Function]}
+    onClick={[MockFunction]}
   >
     <FontAwesomeIcon
       border={false}
