@@ -2,15 +2,23 @@
 
 A web client component for M2M (personal) Rimac project. Serves as frontend along with [js-cpu-rimac](https://github.com/AntonioErdeljac/js-cpu-rimac)
 
-[Live version](https://quizzical-cray-6ae2e4.netlify.app/)
 
----
+
+### Lint
+[![eslint: airbnb](https://img.shields.io/badge/Eslint-Airbnb-red?logo=airbnb&style=flat)](https://github.com/airbnb/javascript)
+[![commitlint: conventional](https://img.shields.io/badge/Commitlint-Conventional-red?logo=commitlint&style=flat)](https://github.com/conventional-changelog/commitlint)
+[![code style: prettier](https://img.shields.io/badge/Code%20Style-Prettier-red?logo=prettier&style=flat)](https://github.com/prettier/prettier)
+[![stylelint: scss](https://img.shields.io/badge/Stylelint-SCSS-red?logo=stylelint&style=flat)](https://github.com/bjankord/stylelint-config-sass-guidelines#readme)
+
+## CI / CD
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4f615b92-82ed-451d-8939-9f86d3f8c0f5/deploy-status)](https://app.netlify.com/sites/quizzical-cray-6ae2e4/deploys)
 ![Node.js CI](https://github.com/AntonioErdeljac/js-web-rimac/workflows/Node.js%20CI/badge.svg)
-[![eslint: airbnb](https://badgen.net/badge/eslint/Airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
-[![commitlint: conventional](https://badgen.net/badge/commitlint/Conventional/cyan)](https://github.com/conventional-changelog/commitlint)
-[![code style: prettier](https://badgen.net/badge/code%20style/Prettier/blue)](https://github.com/prettier/prettier)
-[![stylelint: scss](https://badgen.net/badge/stylelint/SCSS/pink)](https://github.com/bjankord/stylelint-config-sass-guidelines#readme)
+
+[Live version](https://quizzical-cray-6ae2e4.netlify.app/)
+
+## Test
+[![testing: Jest](https://img.shields.io/badge/Tests-Jest-red?logo=jest&style=flat)](https://github.com/facebook/jest)
+[![testing: Enzyme](https://img.shields.io/badge/Tests-Enzyme-red?logo=enzyme&style=flat)](https://github.com/enzymejs/enzyme)
 
 
 
