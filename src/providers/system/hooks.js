@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { isFuture } from 'date-fns';
 
 import { FIREBASE_COLLECTION, CONNECTION_MS } from './constants';
@@ -65,15 +65,30 @@ export const useSystemProvider = () => {
     info.networkConnections,
   ]);
 
-  return {
-    getAlertMessage,
-    getStatus,
-    getTemperature,
-    getBattery,
-    getMemory,
-    getNetworkConnections,
-    warn,
-    getWarning,
-    clearWarning,
-  };
+  const value = useMemo(
+    () => ({
+      getAlertMessage,
+      getStatus,
+      getTemperature,
+      getBattery,
+      getMemory,
+      getNetworkConnections,
+      warn,
+      getWarning,
+      clearWarning,
+    }),
+    [
+      getAlertMessage,
+      getStatus,
+      getTemperature,
+      getBattery,
+      getMemory,
+      getNetworkConnections,
+      warn,
+      getWarning,
+      clearWarning,
+    ],
+  );
+
+  return value;
 };

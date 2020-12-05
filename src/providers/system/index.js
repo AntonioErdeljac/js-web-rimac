@@ -15,35 +15,9 @@ export const useSystem = () => {
 };
 
 export const SystemProvider = ({ children }) => {
-  const {
-    getAlertMessage,
-    getStatus,
-    getTemperature,
-    getBattery,
-    getMemory,
-    getNetworkConnections,
-    warn,
-    getWarning,
-    clearWarning,
-  } = useSystemProvider();
+  const value = useSystemProvider();
 
-  return (
-    <Context.Provider
-      value={{
-        getAlertMessage,
-        getStatus,
-        getTemperature,
-        getBattery,
-        getMemory,
-        getNetworkConnections,
-        warn,
-        getWarning,
-        clearWarning,
-      }}
-    >
-      {children}
-    </Context.Provider>
-  );
+  return <Context.Provider value={value}>{children}</Context.Provider>;
 };
 
 SystemProvider.propTypes = {
