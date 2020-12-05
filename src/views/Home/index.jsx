@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <Fade left>
       <div className="r-home">
-        <Row className="d-inline-flex align-items-center justify-content-center w-100 flex-column">
+        <div className="d-inline-flex align-items-center justify-content-center w-100">
           <img
             className={cn('mb-5 r-home r-home-image img-fluid', {
               'r-home-image--danger': system.getStatus() !== 'success',
@@ -31,7 +31,7 @@ const Home = () => {
             alt="car"
             src={car}
           />
-        </Row>
+        </div>
         <Row>
           <Col lg={3} md={6}>
             <Info
