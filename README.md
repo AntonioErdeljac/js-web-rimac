@@ -5,8 +5,8 @@ A web client component for M2M (personal) Rimac project. Serves as frontend alon
 [Live version](https://quizzical-cray-6ae2e4.netlify.app/)
 
 ---
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4f615b92-82ed-451d-8939-9f86d3f8c0f5/deploy-status)](https://app.netlify.com/sites/quizzical-cray-6ae2e4/deploys)
+![Node.js CI](https://github.com/AntonioErdeljac/js-web-rimac/workflows/Node.js%20CI/badge.svg)
 [![eslint: airbnb](https://badgen.net/badge/eslint/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 [![commitlint: conventinal](https://badgen.net/badge/commitlint/conventinal/cyan)](https://github.com/conventional-changelog/commitlint)
 [![code style: prettier](https://badgen.net/badge/code%20style/prettier/blue)](https://github.com/prettier/prettier)
