@@ -89,3 +89,93 @@ exports[`Drawer Component renders correctly according to snapshot 1`] = `
   </CardBody>
 </Card>
 `;
+
+exports[`Info Component renders correctly according to snapshot 1`] = `
+<Card
+  body={false}
+  className="r-info mb-4"
+>
+  <CardBody
+    className="d-flex align-items-center flex-column"
+  >
+    <FontAwesomeIcon
+      border={false}
+      className="r-info r-info-icon"
+      fixedWidth={false}
+      flip={null}
+      icon="battery"
+      inverse={false}
+      listItem={false}
+      mask={null}
+      pull={null}
+      pulse={false}
+      rotation={null}
+      size="2x"
+      spin={false}
+      swapOpacity={false}
+      symbol={false}
+      title=""
+      transform={null}
+    />
+    <div
+      className="mt-4"
+    >
+      <strong
+        className="text-primary"
+      >
+        Battery
+      </strong>
+    </div>
+    <div
+      className="mt-4"
+    >
+      <strong
+        className=""
+      >
+        <CountUp
+          decimal="."
+          decimals={0}
+          delay={null}
+          duration={5}
+          easingFn={null}
+          end={100}
+          formattingFn={null}
+          onEnd={[Function]}
+          onPauseResume={[Function]}
+          onReset={[Function]}
+          onStart={[Function]}
+          onUpdate={[Function]}
+          prefix=""
+          preserveValue={true}
+          redraw={false}
+          separator=""
+          start={0}
+          startOnMount={true}
+          suffix=""
+          useEasing={true}
+        />
+        %
+      </strong>
+    </div>
+    <hr
+      className="w-100"
+    />
+    <div
+      className="d-inline-flex align-items-center justify-content-between w-100 px-5"
+    >
+      <small
+        className="text-muted"
+      >
+        Max: 
+        0
+      </small>
+      <small
+        className="text-muted"
+      >
+        Min: 
+        0
+      </small>
+    </div>
+  </CardBody>
+</Card>
+`;
