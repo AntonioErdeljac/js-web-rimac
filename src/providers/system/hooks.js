@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { isFuture } from 'date-fns';
 
 import { FIREBASE_COLLECTION, CONNECTION_MS } from './constants';
@@ -6,15 +6,16 @@ import { FIREBASE_COLLECTION, CONNECTION_MS } from './constants';
 import { firebase } from '../../utils';
 
 export const useSystemProvider = () => {
-  const [info, setInfo] = useState({});
   const [isConnected, setIsConnected] = useState(false);
-  const [warnings, setWarnings] = useState([]);
+
+  const warnings = useRef([]);
+  const info = useRef({});
 
   useEffect(() => {
     const ref = firebase.db.ref(FIREBASE_COLLECTION);
 
     ref?.on('value', (snapshot) => {
-      setInfo(snapshot.val() || {});
+      info.current = snapshot.val() || {};
     });
 
     return () => ref?.off();
@@ -22,33 +23,32 @@ export const useSystemProvider = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsConnected(isFuture(new Date(info.expiresAt)));
+      setIsConnected(isFuture(new Date(info.current.expiresAt)));
     }, CONNECTION_MS);
 
     return () => clearInterval(interval);
-  }, [info.expiresAt]);
+  }, []);
 
-  const warn = useCallback(
-    (message) => setWarnings((oldWarnings) => [message, ...oldWarnings]),
-    [],
-  );
-  const getWarning = useCallback(() => warnings[0], [warnings]);
-  const clearWarning = useCallback(
-    (id) => setWarnings((oldWarnings) => [...oldWarnings.filter((warning) => warning !== id)]),
-    [],
-  );
+  const warn = useCallback((message) => {
+    warnings.current = [message, ...warnings.current];
+  }, []);
+
+  const getWarning = useCallback(() => warnings.current[0], []);
+  const clearWarning = useCallback((id) => {
+    warnings.current = [...warnings.current.filter((warning) => warning !== id)];
+  }, []);
 
   const getStatus = useCallback(() => {
     if (!isConnected) {
       return 'danger';
     }
 
-    if (warnings[0]) {
+    if (warnings.current[0]) {
       return 'warning';
     }
 
     return 'success';
-  }, [warnings, isConnected]);
+  }, [isConnected]);
   const getAlertMessage = useCallback(() => {
     const messagesMap = {
       danger: 'Connection not established.',
@@ -58,12 +58,10 @@ export const useSystemProvider = () => {
 
     return messagesMap[getStatus()];
   }, [getStatus, getWarning]);
-  const getTemperature = useCallback(() => info.temperature, [info.temperature]);
-  const getBattery = useCallback(() => info.batteryPercentage, [info.batteryPercentage]);
-  const getMemory = useCallback(() => info.memoryPercentage, [info.memoryPercentage]);
-  const getNetworkConnections = useCallback(() => info.networkConnections, [
-    info.networkConnections,
-  ]);
+  const getTemperature = useCallback(() => info.current.temperature, []);
+  const getBattery = useCallback(() => info.current.batteryPercentage, []);
+  const getMemory = useCallback(() => info.current.memoryPercentage, []);
+  const getNetworkConnections = useCallback(() => info.current.networkConnections, []);
 
   const value = useMemo(
     () => ({
