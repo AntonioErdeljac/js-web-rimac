@@ -20,10 +20,12 @@ const Help = () => {
           automobile, metrics are received in real time from my computer. Technologies used are{' '}
           <strong>React, SCSS, ES6, Firebase, Bootstrap, and Node.js. </strong>
           Project is structured to apply for an enterprise application. For consistency, the
-          following packages are used: <strong>Prettier, Eslint, Commitlint, Husky</strong>. Testing
-          is done for all common components using <strong>Enzyme and Jest</strong>. I would gladly
-          go over the code and talk about which parts I would change in a larger application, if
-          given the chance ;)
+          following packages are used:{' '}
+          <strong>Prettier, Eslint, Commitlint, Stylelint, and Husky</strong>. Testing is done for
+          all common components using <strong>Enzyme and Jest</strong>. Code splitting and lazy
+          loading is implemented on a route level using{' '}
+          <strong>React.Lazy and React.Suspense</strong>. I would gladly go over the code and talk
+          about which parts I would change in a larger application, if given the chance ;)
         </div>
         <h3 className="r-help r-help-title">
           <strong>Can it read metrics from my computer?</strong>
