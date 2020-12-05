@@ -4,6 +4,13 @@ import { shallow } from 'enzyme';
 
 import Drawer from './index';
 
+jest.mock('../../providers', () => ({
+  useDrawer: () => ({
+    toggle: () => {},
+    isOpen: false,
+  }),
+}));
+
 const makeProps = ({ children } = {}) => ({
   children: children || <p>Content</p>,
 });
