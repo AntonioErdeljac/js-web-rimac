@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { createContext, useCallback, useContext, useState } from 'react';
+import React, { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 export const Context = createContext();
 
@@ -13,14 +13,27 @@ export const useDrawer = () => {
   return systemContext;
 };
 
+const mql = window.matchMedia(`(min-width: 992px)`);
+
 export const DrawerProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isDocked, setIsDocked] = useState(mql.matches);
+
+  const handleMediaQueryChange = useCallback(() => {
+    setIsDocked(mql.matches);
+  }, []);
+
+  useEffect(() => {
+    mql.addEventListener('change', handleMediaQueryChange);
+
+    return () => mql.addEventListener('change', handleMediaQueryChange);
+  }, [handleMediaQueryChange]);
 
   const toggle = useCallback(() => {
     setIsOpen((oldIsOpen) => !oldIsOpen);
   }, []);
 
-  return <Context.Provider value={{ isOpen, toggle }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ isOpen, toggle, isDocked }}>{children}</Context.Provider>;
 };
 
 DrawerProvider.propTypes = {
