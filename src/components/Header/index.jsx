@@ -10,7 +10,7 @@ const Header = () => {
   const system = useSystem();
 
   return (
-    <div className="r-header d-inline-flex align-items-center justify-content-between px-5">
+    <div className="r-header d-inline-flex align-items-center justify-content-center justify-content-lg-between px-5">
       <h4 className="text-primary text-monospace">CONCEPT_TWO</h4>
       <Message
         variant={system.getStatus()}

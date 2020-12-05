@@ -6,7 +6,7 @@ import { Content } from './components';
 
 import './index.scss';
 
-const mql = window.matchMedia(`(min-width: 800px)`);
+const mql = window.matchMedia(`(min-width: 992px)`);
 
 const Drawer = ({ children }) => {
   const [isDocked, setIsDocked] = useState(mql.matches);
