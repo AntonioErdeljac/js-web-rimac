@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Drawer Component renders correctly according to snapshot 1`] = `
-<div
-  className="r-header d-inline-flex align-items-center justify-content-between px-5"
->
-  <h4
-    className="text-primary text-monospace"
-  >
-    CONCEPT_TWO
-  </h4>
-  <Memo(Message)
-    icon="exclamation-circle"
-  />
-</div>
-`;
-
 exports[`Header Component renders correctly according to snapshot 1`] = `
 <div
   className="r-header d-inline-flex align-items-center justify-content-between px-5"
