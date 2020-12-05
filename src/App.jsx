@@ -1,14 +1,17 @@
-import React, { memo } from 'react';
+import React, { lazy, memo, Suspense } from 'react';
 import { Container } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { SystemProvider } from './providers';
-import { Drawer, Header } from './components';
-import { Home, Settings, Help } from './views';
+import { Drawer, Header, Loader } from './components';
 import { icons } from './utils';
 
 import './scss/index.scss';
 import routes from './routes';
+
+const Help = lazy(() => import('./views/Help'));
+const Home = lazy(() => import('./views/Home'));
+const Settings = lazy(() => import('./views/Settings'));
 
 icons();
 
@@ -19,16 +22,18 @@ const App = () => {
         <SystemProvider>
           <Header />
           <Container fluid className="px-5">
-            <Switch>
-              {routes({ Home, Settings, Help }).map((route) => (
-                <Route
-                  key={route.path}
-                  exact={route.exact}
-                  component={route.component}
-                  path={route.path}
-                />
-              ))}
-            </Switch>
+            <Suspense fallback={<Loader />}>
+              <Switch>
+                {routes({ Home, Settings, Help }).map((route) => (
+                  <Route
+                    key={route.path}
+                    exact={route.exact}
+                    component={route.component}
+                    path={route.path}
+                  />
+                ))}
+              </Switch>
+            </Suspense>
           </Container>
         </SystemProvider>
       </Drawer>
