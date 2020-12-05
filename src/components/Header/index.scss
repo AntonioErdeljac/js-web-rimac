@@ -4,4 +4,17 @@
   height: 88px;
   width: 100%;
   background-color: #DEE0F0;
+  position: relative;
+
+  &-menu {
+    position: absolute;
+    left: 20px;
+    color: $primary;
+    top: 45%;
+    transform: translateY(-45%);
+
+    @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
+      display: none !important;
+    }
+  }
 }

@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Message from '../Message';
 
@@ -11,6 +12,9 @@ const Header = () => {
 
   return (
     <div className="r-header d-inline-flex align-items-center justify-content-center justify-content-lg-between px-5">
+      <div className="r-header-menu">
+        <FontAwesomeIcon size="lg" icon="bars" />
+      </div>
       <h4 className="text-primary text-monospace">CONCEPT_TWO</h4>
       <Message
         variant={system.getStatus()}

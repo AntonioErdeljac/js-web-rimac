@@ -9,6 +9,7 @@ import {
   faTachometerAlt,
   faQuestion,
   faHeart,
+  faBars,
 } from '@fortawesome/free-solid-svg-icons';
 
 export default () =>
@@ -22,4 +23,5 @@ export default () =>
     faTachometerAlt,
     faQuestion,
     faHeart,
+    faBars,
   );
