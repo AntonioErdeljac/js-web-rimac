@@ -18,7 +18,7 @@ A **Progressive Web App** which serves as a client component for M2M (personal) 
 [![testing: Jest](https://img.shields.io/badge/Tests-Jest-red?logo=jest&style=flat)](https://github.com/facebook/jest)
 [![testing: Enzyme](https://img.shields.io/badge/Tests-Enzyme-red?logo=enzyme&style=flat)](https://github.com/enzymejs/enzyme)
 
-## Database
+### Database
 [![testing: Enzyme](https://img.shields.io/badge/Database-Firebase-red?logo=firebase&style=flat)](https://github.com/firebase/)
 
 
