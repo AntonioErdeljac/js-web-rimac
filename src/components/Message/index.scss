@@ -3,7 +3,6 @@
 .r-alert {
   width: auto;
   height: auto;
-  border-radius: 8px !important;
 
   @media only screen and (max-width: map-get($grid-breakpoints, "lg")) {
     display: none !important;
