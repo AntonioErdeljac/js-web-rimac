@@ -8,14 +8,49 @@ import { firebase } from '../../utils';
 export const useSystemProvider = () => {
   const [isConnected, setIsConnected] = useState(false);
 
+  const oldMemory = useRef(0);
+  const oldNetworkConnections = useRef(0);
+  const oldBattery = useRef(0);
+  const oldTemperature = useRef(0);
+
+  const expiresAt = useRef(new Date());
+
+  const [memory, setMemory] = useState(0);
+  const [networkConnections, setNetworkConnections] = useState(0);
+  const [battery, setBattery] = useState(0);
+  const [temperature, setTemperature] = useState(0);
+
   const warnings = useRef([]);
-  const info = useRef({});
 
   useEffect(() => {
     const ref = firebase.db.ref(FIREBASE_COLLECTION);
 
     ref?.on('value', (snapshot) => {
-      info.current = snapshot.val() || {};
+      const values = snapshot.val();
+
+      if (values.memoryPercentage !== oldMemory.current) {
+        oldMemory.current = values.memoryPercentage;
+        setMemory(values.memoryPercentage);
+      }
+
+      if (values.batteryPercentage !== oldBattery.current) {
+        oldBattery.current = values.batteryPercentage;
+        setBattery(values.batteryPercentage);
+      }
+
+      if (values.temperature !== oldTemperature.current) {
+        oldTemperature.current = values.temperature;
+        setTemperature(values.temperature);
+      }
+
+      if (values.networkConnections !== oldNetworkConnections.current) {
+        oldNetworkConnections.current = values.networkConnections;
+        setNetworkConnections(values.networkConnections);
+      }
+
+      if (values.expiresAt !== expiresAt.current) {
+        expiresAt.current = values.expiresAt;
+      }
     });
 
     return () => ref?.off();
@@ -23,7 +58,7 @@ export const useSystemProvider = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsConnected(isFuture(new Date(info.current.expiresAt)));
+      setIsConnected(isFuture(new Date(expiresAt.current)));
     }, CONNECTION_MS);
 
     return () => clearInterval(interval);
@@ -58,10 +93,10 @@ export const useSystemProvider = () => {
 
     return messagesMap[getStatus()];
   }, [getStatus, getWarning]);
-  const getTemperature = useCallback(() => info.current.temperature, []);
-  const getBattery = useCallback(() => info.current.batteryPercentage, []);
-  const getMemory = useCallback(() => info.current.memoryPercentage, []);
-  const getNetworkConnections = useCallback(() => info.current.networkConnections, []);
+  const getTemperature = useCallback(() => temperature, [temperature]);
+  const getBattery = useCallback(() => battery, [battery]);
+  const getMemory = useCallback(() => memory, [memory]);
+  const getNetworkConnections = useCallback(() => networkConnections, [networkConnections]);
 
   const value = useMemo(
     () => ({
