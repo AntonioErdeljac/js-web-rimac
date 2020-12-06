@@ -7,7 +7,7 @@ import './index.scss';
 const Help = () => {
   return (
     <Fade left>
-      <div className="r-help mt-5">
+      <div className="r-help mt-4">
         <h3 className="r-help r-help-title">
           <strong>What is this?</strong>
         </h3>

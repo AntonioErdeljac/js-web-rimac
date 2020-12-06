@@ -22,7 +22,7 @@ const App = () => {
         <Drawer>
           <SystemProvider>
             <Header />
-            <Container fluid className="px-5">
+            <Container fluid className="px-lg-5 px-3 mb-3">
               <Suspense fallback={<Loader />}>
                 <Switch>
                   {routes({ Home, Settings, Help }).map((route) => (
