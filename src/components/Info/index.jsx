@@ -44,6 +44,7 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
               Min
             </FormLabel>
             <FormControl
+              type="number"
               value={min !== -Infinity ? min : ''}
               className="my-2"
               placeholder="Min"
@@ -54,6 +55,7 @@ const Info = ({ icon, title, value, suffix, min, max, warning, edit, onChange })
               Max
             </FormLabel>
             <FormControl
+              type="number"
               value={max !== Infinity ? max : ''}
               placeholder="Max"
               onChange={onChange}
