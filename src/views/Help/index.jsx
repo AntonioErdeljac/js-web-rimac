@@ -31,10 +31,9 @@ const Help = () => {
           <br />
           <br />
           The app also passes Lighthouse results with flying (green) colors, and is approved as a{' '}
-          <strong>Progressive Web App (Try loading this page with your WiFi off)</strong>
-          <br />
-          <br />I would gladly go over the code and talk about which parts I would change in a
-          larger application, if given the chance to do so ;)
+          <strong>Progressive Web App (Try loading this page with your WiFi off).</strong> I would
+          gladly go over the code and talk about which parts I would change in a larger application,
+          if given the chance to do so ;)
         </div>
         <h3 className="r-help r-help-title">
           <strong>Can it read metrics from my computer?</strong>

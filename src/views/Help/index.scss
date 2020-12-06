@@ -2,11 +2,11 @@
 
 .r-help {
   &-title {
-    margin-bottom: 15px;
+    margin-bottom: 13px;
   }
 
   &-description {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     max-width: 820px;
 
     @media only screen and (max-width: map-get($grid-breakpoints, "lg")) {
