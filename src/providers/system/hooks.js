@@ -69,6 +69,7 @@ export const useSystemProvider = () => {
   }, []);
 
   const getWarning = useCallback(() => warnings.current[0], []);
+
   const clearWarning = useCallback((id) => {
     warnings.current = [...warnings.current.filter((warning) => warning !== id)];
   }, []);
@@ -84,6 +85,7 @@ export const useSystemProvider = () => {
 
     return 'success';
   }, [isConnected]);
+
   const getAlertMessage = useCallback(() => {
     const messagesMap = {
       danger: 'Connection not established.',
@@ -93,9 +95,13 @@ export const useSystemProvider = () => {
 
     return messagesMap[getStatus()];
   }, [getStatus, getWarning]);
+
   const getTemperature = useCallback(() => temperature, [temperature]);
+
   const getBattery = useCallback(() => battery, [battery]);
+
   const getMemory = useCallback(() => memory, [memory]);
+
   const getNetworkConnections = useCallback(() => networkConnections, [networkConnections]);
 
   const value = useMemo(
