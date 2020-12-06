@@ -23,6 +23,8 @@
       "react-hooks"
     ],
     "rules": {
+      "no-restricted-globals": 0,
+      "no-underscore-dangle": 0,
       "global-require": 0,
       "import/no-unresolved": [2, { "caseSensitive": false }],
       "jsx-a11y/click-events-have-key-events": 0,
