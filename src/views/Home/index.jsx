@@ -1,11 +1,10 @@
 import cn from 'classnames';
-import FadeIn from 'react-fade-in';
 import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
 
 import car from './images/car.png';
 
-import { Info } from '../../components';
+import { Info, Fade } from '../../components';
 import { useSystem } from '../../providers';
 import { useLocalStorage } from '../../hooks';
 
@@ -20,7 +19,7 @@ const Home = () => {
   const [memory] = useLocalStorage('r-memory', {});
 
   return (
-    <FadeIn>
+    <Fade>
       <div className="r-home">
         <div className="d-inline-flex align-items-center justify-content-center w-100">
           <img
@@ -78,7 +77,7 @@ const Home = () => {
           </Col>
         </Row>
       </div>
-    </FadeIn>
+    </Fade>
   );
 };
 

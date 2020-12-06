@@ -1,12 +1,13 @@
-import FadeIn from 'react-fade-in';
 import React, { memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Fade } from '../../components';
 
 import './index.scss';
 
 const Help = () => {
   return (
-    <FadeIn>
+    <Fade>
       <div className="r-help mt-4">
         <h3 className="r-help r-help-title">
           <strong>What is this?</strong>
@@ -72,7 +73,7 @@ const Help = () => {
           </a>
         </small>
       </div>
-    </FadeIn>
+    </Fade>
   );
 };
 
