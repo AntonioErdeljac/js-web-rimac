@@ -12,7 +12,7 @@ import {
   faBars,
 } from '@fortawesome/free-solid-svg-icons';
 
-export default () =>
+const initialize = () =>
   library.add(
     faCog,
     faExclamationCircle,
@@ -25,3 +25,5 @@ export default () =>
     faHeart,
     faBars,
   );
+
+export default { initialize };

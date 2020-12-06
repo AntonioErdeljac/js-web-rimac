@@ -13,7 +13,7 @@ const Help = lazy(() => import('./views/Help'));
 const Home = lazy(() => import('./views/Home'));
 const Settings = lazy(() => import('./views/Settings'));
 
-icons();
+icons.initialize();
 
 const App = () => {
   return (
