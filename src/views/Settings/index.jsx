@@ -1,6 +1,6 @@
+import FadeIn from 'react-fade-in';
 import React, { memo } from 'react';
 import { Col, Row } from 'react-bootstrap';
-import { Fade } from 'react-reveal';
 
 import { useSettings } from './hooks';
 
@@ -19,7 +19,7 @@ const Settings = () => {
   } = useSettings();
 
   return (
-    <Fade left>
+    <FadeIn>
       <div className="r-settings mt-5">
         <Row>
           <Col lg={3} md={6}>
@@ -64,7 +64,7 @@ const Settings = () => {
           </Col>
         </Row>
       </div>
-    </Fade>
+    </FadeIn>
   );
 };
 
