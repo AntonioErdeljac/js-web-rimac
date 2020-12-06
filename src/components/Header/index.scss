@@ -7,11 +7,17 @@
   position: relative;
 
   &-menu {
+    cursor: pointer;
     position: absolute;
     left: 20px;
     color: $primary;
     top: 45%;
     transform: translateY(-45%);
+    transition: .2s opacity;
+
+    &:hover {
+      opacity: 0.5;
+    }
 
     @media only screen and (min-width: map-get($grid-breakpoints, "lg")) {
       display: none !important;

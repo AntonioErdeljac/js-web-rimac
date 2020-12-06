@@ -33,7 +33,16 @@ export const DrawerProvider = ({ children }) => {
     setIsOpen((oldIsOpen) => !oldIsOpen);
   }, []);
 
-  const value = useMemo(() => ({ isOpen, toggle, isDocked }), [isOpen, toggle, isDocked]);
+  const close = useCallback(() => {
+    setIsOpen(false);
+  }, []);
+
+  const value = useMemo(() => ({ isOpen, toggle, isDocked, close }), [
+    isOpen,
+    toggle,
+    isDocked,
+    close,
+  ]);
 
   return <Context.Provider value={value}>{children}</Context.Provider>;
 };
