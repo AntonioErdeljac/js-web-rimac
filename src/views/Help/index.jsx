@@ -19,13 +19,22 @@ const Help = () => {
           <strong> in hope of getting an interview.</strong> Instead of reading metrics from an
           automobile, metrics are received in real time from my computer. Technologies used are{' '}
           <strong>React, SCSS, ES6, Firebase, Bootstrap, and Node.js. </strong>
+          <br />
+          <br />
           Project is structured to apply for an enterprise application. For consistency, the
           following packages are used:{' '}
           <strong>Prettier, Eslint, Commitlint, Stylelint, and Husky</strong>. Testing is done for
           all common components using <strong>Enzyme and Jest</strong>. Code splitting and lazy
           loading is implemented on a route level using{' '}
-          <strong>React.Lazy and React.Suspense</strong>. I would gladly go over the code and talk
-          about which parts I would change in a larger application, if given the chance ;)
+          <strong>React.Lazy and React.Suspense</strong>. In development mode, app is constantly
+          being checked for unnecessary rerenders with <strong>why-did-your-render</strong> package.
+          <br />
+          <br />
+          The app also passes Lighthouse results with flying (green) colors, and is approved as a{' '}
+          <strong>Progressive Web App (Try loading this page with your WiFi off)</strong>
+          <br />
+          <br />I would gladly go over the code and talk about which parts I would change in a
+          larger application, if given the chance to do so ;)
         </div>
         <h3 className="r-help r-help-title">
           <strong>Can it read metrics from my computer?</strong>

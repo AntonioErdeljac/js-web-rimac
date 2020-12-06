@@ -1,6 +1,6 @@
 # js-web-rimac
 
-A web client component for M2M (personal) Rimac project. Serves as frontend along with [js-cpu-rimac](https://github.com/AntonioErdeljac/js-cpu-rimac)
+A **Progressive Web App** which serves as a client component for M2M (personal) Rimac project. Goes along with [js-cpu-rimac](https://github.com/AntonioErdeljac/js-cpu-rimac)
 
 ### CI / CD
 [![Netlify Status](https://api.netlify.com/api/v1/badges/4f615b92-82ed-451d-8939-9f86d3f8c0f5/deploy-status)](https://app.netlify.com/sites/quizzical-cray-6ae2e4/deploys)
