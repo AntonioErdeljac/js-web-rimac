@@ -14,9 +14,9 @@ const Content = () => {
         <Logo height={45} width={45} />
       </div>
       <div className="pt-4 mt-2 d-flex justify-content-center align-items-center flex-column">
-        {routes().map((route) => (
-          <Item key={route.path} icon={route.icon} path={route.path} />
-        ))}
+        {routes().map(
+          (route) => !route.hidden && <Item key={route.path} icon={route.icon} path={route.path} />,
+        )}
       </div>
     </div>
   );

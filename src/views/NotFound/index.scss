@@ -1,0 +1,17 @@
+@import '../../scss/bootstrap';
+
+.r-not-found {
+  position: relative;
+  color: $primary;
+
+  &:first-child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-icon {
+    color: $primary;
+  }
+}

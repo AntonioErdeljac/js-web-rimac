@@ -1,4 +1,4 @@
-export default ({ Home, Settings, Help } = {}) => [
+export default ({ Home, Settings, Help, NotFound } = {}) => [
   {
     path: '/',
     component: Home,
@@ -16,5 +16,11 @@ export default ({ Home, Settings, Help } = {}) => [
     component: Help,
     exact: true,
     icon: 'question',
+  },
+  {
+    path: '*',
+    component: NotFound,
+    exact: true,
+    hidden: true,
   },
 ];

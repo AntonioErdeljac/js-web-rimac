@@ -12,6 +12,7 @@ import routes from './routes';
 const Help = lazy(() => import('./views/Help'));
 const Home = lazy(() => import('./views/Home'));
 const Settings = lazy(() => import('./views/Settings'));
+const NotFound = lazy(() => import('./views/NotFound'));
 
 icons.initialize();
 
@@ -25,7 +26,7 @@ const App = () => {
             <Container fluid className="px-lg-5 px-3 mb-3">
               <Suspense fallback={<Loader />}>
                 <Switch>
-                  {routes({ Home, Settings, Help }).map((route) => (
+                  {routes({ Home, Settings, Help, NotFound }).map((route) => (
                     <Route
                       key={route.path}
                       exact={route.exact}
