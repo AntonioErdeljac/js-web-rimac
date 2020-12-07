@@ -76,13 +76,13 @@ exports[`Info Component renders correctly according to snapshot 1`] = `
       <small
         className="text-muted"
       >
-        Max: 
+        Min: 
         0
       </small>
       <small
         className="text-muted"
       >
-        Min: 
+        Max: 
         0
       </small>
     </div>
